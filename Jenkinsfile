@@ -21,20 +21,19 @@ pipeline{
 
             }
         }
-      stage('Deploy to Tomcat') {
+    // Dans votre Jenkinsfile:
+stage('Deploy to Tomcat') {
     steps {
         script {
             def warFile = 'target/e-commerce-v2-0.0.1-SNAPSHOT.war'
-            
-            // NOUVEAU CHEMIN: Utilisation du répertoire de déploiement d'Eclipse WTP
             def tomcatWebappsDir = '/mnt/c/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps/' 
 
-            echo "Déploiement de ${warFile} vers ${tomcatWebappsDir}..."
+            echo "Déploiement et renommage en ecom.war..."
             
-            // La commande de copie
-            sh "cp ${warFile} ${tomcatWebappsDir}" 
+            // Renomme le fichier pendant la copie pour obtenir l'URL /ecom
+            sh "cp ${warFile} ${tomcatWebappsDir}ecom.war" 
             
-            echo "Déploiement terminé! Vérifiez les permissions si ça échoue à nouveau."
+            echo "Déploiement terminé. L'URL est maintenant /ecom."
         }
     }
 }
