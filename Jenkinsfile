@@ -21,22 +21,20 @@ pipeline{
 
             }
         }
-        stage('Deploy to Tomcat') {
+      stage('Deploy to Tomcat') {
     steps {
         script {
-            // Le chemin du fichier .war est relatif au workspace Jenkins
             def warFile = 'target/e-commerce-v2-0.0.1-SNAPSHOT.war'
             
-            // Le répertoire webapps de Tomcat doit être spécifié ici.
-            // **REMPLACEZ** le chemin ci-dessous par le chemin réel de votre dossier webapps !
-            def tomcatWebappsDir = '/opt/tomcat/webapps/' 
+            // NOUVEAU CHEMIN: Utilisation du répertoire de déploiement d'Eclipse WTP
+            def tomcatWebappsDir = '/mnt/c/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps/' 
 
             echo "Déploiement de ${warFile} vers ${tomcatWebappsDir}..."
             
-            // Commande pour copier l'artefact
+            // La commande de copie
             sh "cp ${warFile} ${tomcatWebappsDir}" 
             
-            echo "Déploiement terminé! Votre application devrait être accessible."
+            echo "Déploiement terminé! Vérifiez les permissions si ça échoue à nouveau."
         }
     }
 }
