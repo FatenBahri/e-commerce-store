@@ -21,11 +21,12 @@ pipeline {
     
         // STAGE DE DÉPLOIEMENT : C'EST ICI QUE LE FICHIER EST COPIÉ VERS WINDOWS
         
-        stage('Deploy') {
+       stage('Deploy') {
     steps {
-        sh 'cp target/e-commerce-v2-0.0.1-SNAPSHOT.war "C:/Users/faten/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps/"'
+        sh 'sudo cp target/e-commerce-v2-0.0.1-SNAPSHOT.war /var/lib/tomcat10/webapps/'
     }
 }
+
 
 	}
 	post{
