@@ -8,6 +8,7 @@ pipeline{
 		}}
 		 stage('Check Environment') {
             steps {
+				echo'verif'
                 sh 'mvn -v'
                 
                 
