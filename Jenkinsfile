@@ -6,10 +6,17 @@ pipeline{
 			echo " Depot git cloner => success :)"
             git branch:"master", url: 'https://github.com/FatenBahri/e-commerce-store.git'
 		}}
+		 stage('Check Environment') {
+            steps {
+                sh 'mvn install'
+                
+                
+           }
+       }
 		  stage('Build'){
             steps{
                 echo 'Building..cad le compilation de projet ET =>artifact .war/.jar'
-                sh  "mvn clean package && mvn install"
+                sh  'mvn clean package '
 
             }
         }
