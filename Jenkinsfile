@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
 	agent any
 	stages{
 		stage("Clone"){
@@ -21,22 +21,24 @@ pipeline{
 
             }
         }
-    // Dans votre Jenkinsfile:
-stage('Deploy to Tomcat') {
-    steps {
-        script {
-            def warFile = 'target/e-commerce-v2-0.0.1-SNAPSHOT.war'
-            def tomcatWebappsDir = '/mnt/c/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps/' 
+    
+        stage('Deploy to Tomcat') {
+            steps {
+                script {
+                    def warFile = 'target/e-commerce-v2-0.0.1-SNAPSHOT.war'
+                    
+                    // 💥 CORRECTION MAJEURE: Utilisation du chemin WTPWEBAPPS et du répertoire 'pragrammation'
+                    def tomcatWebappsDir = '/mnt/c/pragrammation/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/' 
 
-            echo "Déploiement et renommage en ecom.war..."
-            
-            // Renomme le fichier pendant la copie pour obtenir l'URL /ecom
-            sh "cp ${warFile} ${tomcatWebappsDir}ecom.war" 
-            
-            echo "Déploiement terminé. L'URL est maintenant /ecom."
+                    echo "Déploiement et renommage en ecom.war vers le chemin WTP..."
+                    
+                    // Renomme le fichier pendant la copie pour obtenir l'URL /ecom
+                    sh "cp ${warFile} ${tomcatWebappsDir}ecom.war" 
+                    
+                    echo "Déploiement terminé. L'URL est http://localhost:8081/ecom."
+                }
+            }
         }
-    }
-}
 	}
 	post{
             success{
