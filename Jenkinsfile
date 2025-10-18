@@ -23,7 +23,7 @@ pipeline {
         
        stage('Deploy') {
     steps {
-        sh 'sudo cp target/e-commerce-v2-0.0.1-SNAPSHOT.war /var/lib/tomcat10/webapps/'
+        sh 'cp target/e-commerce-v2-0.0.1-SNAPSHOT.war /var/lib/tomcat10/webapps/'
     }
 }
 
