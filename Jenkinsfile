@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage("Clone"){
 			steps{
-			echo "depot git cloner => success :)"
+			echo " Depot git cloner => success :)"
             git branch:"master", url: 'https://github.com/FatenBahri/e-commerce-store.git'
 		}}
 	}
