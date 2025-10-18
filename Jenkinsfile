@@ -8,7 +8,8 @@ pipeline{
 		}}
 		 stage('Check Environment') {
             steps {
-                sh 'mvn install'
+                sh 'mvn -v
+'
                 
                 
            }
