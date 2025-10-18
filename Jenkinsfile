@@ -20,30 +20,13 @@ pipeline {
         }
     
         // STAGE DE DÉPLOIEMENT : C'EST ICI QUE LE FICHIER EST COPIÉ VERS WINDOWS
-        stage('Deploy to Tomcat') {
-            steps {
-                script {
-                    def warFile = 'target/e-commerce-v2-0.0.1-SNAPSHOT.war'
-                    
-                    // 💥 CHEMIN CORRIGÉ CRITIQUE
-                    def tomcatWebappsDir = '/mnt/c/pragrammation/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/' 
-
-                    echo "Déploiement et renommage en ecom.war vers le chemin WTP..."
-                    
-                    // Commande de copie qui rend le fichier visible sur Windows
-                    sh "cp ${warFile} ${tomcatWebappsDir}ecom.war" 
-                    
-                    echo "Déploiement terminé. Vérifiez ce chemin sur votre disque C : ${tomcatWebappsDir}"
-                }
-            }
-        }
         
-        stage('Clean Workspace') {
-            steps {
-                echo 'Nettoyage du dossier target dans l\'espace de travail Jenkins...'
-                sh 'rm -rf target'
-            }
-        }
+        stage('Deploy') {
+    steps {
+        sh 'cp target/e-commerce-v2-0.0.1-SNAPSHOT.war "C:/Users/faten/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps/"'
+    }
+}
+
 	}
 	post{
             success{
