@@ -12,6 +12,12 @@ pipeline {
                 sh 'mvn -v'
            }
        }
+         stage('Test'){
+            steps{
+                echo 'partie test junit+cucumber'
+                
+            }
+        }
 		  stage('Build'){
             steps{
                 echo 'Building..cad le compilation de projet ET =>artifact .war/.jar'
