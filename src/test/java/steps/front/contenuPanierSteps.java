@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,7 +19,12 @@ public class contenuPanierSteps {
 
     @Given("l'utilisateur est sur la page 1 ou 2")
     public void ouvrir_dashboard() {
-        driver = new ChromeDriver();
+    	// Example Java/Selenium WebDriver setup modification
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--headless");       // Run without a GUI
+    	options.addArguments("--no-sandbox");    // Required for Jenkins/Linux environments
+    	options.addArguments("--disable-dev-shm-usage"); // Helps prevent "Out of memory" errors
+    	WebDriver driver = new ChromeDriver(options);
         driver.get("http://localhost:8081/e-commerce-v2/page1.jsp");
         attendre(2000); // attendre 2s pour le chargement
     }
@@ -46,7 +52,13 @@ public class contenuPanierSteps {
     }
     @Given("l'utilisateur est sur la page panier")
     public void affich_panier() {
-        driver = new ChromeDriver();
+    	// Example Java/Selenium WebDriver setup modification
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--headless");       // Run without a GUI
+    	options.addArguments("--no-sandbox");    // Required for Jenkins/Linux environments
+    	options.addArguments("--disable-dev-shm-usage"); // Helps prevent "Out of memory" errors
+    	WebDriver driver = new ChromeDriver(options);
+        
 
         driver.get("http://localhost:8081/e-commerce-v2/AfficherPanierServlet.jsp");
         attendre(2000); // attendre 2s pour le chargement
