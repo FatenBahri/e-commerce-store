@@ -5,11 +5,20 @@ public class Article {
 	private String nom; 
 	private double prix; 
 	//Constructeur 
-	
+	 
 	 
 	    
 	     
-	    // Getters 
+	    public Article(String descp, String nom, double prix) {
+		super();
+		this.descp = descp;
+		this.nom = nom;
+		this.prix = prix;
+	}
+		public Article() {
+			super();
+		}
+		// Getters 
 	    public String getDescription() { 
 	        return descp; 
 	    } 

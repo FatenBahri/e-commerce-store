@@ -19,7 +19,7 @@ pipeline {
             }
         }
     
-        // STAGE DE DÉPLOIEMENT : C'EST ICI QUE LE FICHIER EST COPIÉ VERS WINDOWS
+        // STAGE DE DÉPLOIEMENT : C'EST ICI QUE LE FICHIER EST COPIÉ de jenkins location VERS WINDOWS
         
        stage('Deploy') {
     steps {

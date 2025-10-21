@@ -58,7 +58,7 @@
                     <td><jsp:getProperty name="commande" property="adresse" /> </td>
                     
                    <td>
-                   <a href="details.jsp?nom=<%= comm.getNom() %>">
+                   <a id="voirDetails" href="details.jsp?nom=<%= comm.getNom() %>">
                         Voir détails
                    </a>
                     </td>
@@ -73,6 +73,6 @@
         }
     %>
  <br>
-<button><a href="appSupprimer" >archiver</a></button>
+<button><a id="archiver" href="appSupprimer" >archiver</a></button>
 </body>
 </html>

@@ -13,7 +13,7 @@
     <h2>Votre Panier</h2>
 <div align="right">
 <img alt="" src="R.png" width="40" height="40"style="vertical-align: middle;" >
-		<a href="http://localhost:8081/e-commerce-v2/page1.jsp" >retour au catalogue</a>
+		<a id="retourCat" href="http://localhost:8081/e-commerce-v2/page1.jsp" >retour au catalogue</a>
 </div>
     <%
         // Récupérer le panier depuis la session
@@ -52,7 +52,7 @@
                     <td><jsp:getProperty name="article" property="description" /></td>
                     <td><jsp:getProperty name="article" property="prix" /> €</td>
                     <td>
-                        <a href="SupprimerServlet?nom=<jsp:getProperty name='article' property='nom' />&descp=<jsp:getProperty name='article' property='description' />&prix=<jsp:getProperty name='article' property='prix' />">
+                        <a class="supprimer" href="SupprimerServlet?nom=<jsp:getProperty name='article' property='nom' />&descp=<jsp:getProperty name='article' property='description' />&prix=<jsp:getProperty name='article' property='prix' />">
                             Supprimer
                         </a>
                     </td>
@@ -66,6 +66,6 @@
         }
     %>
  <br>
-<button><a href="formulaire.jsp" >commander</a></button>
+<button><a id="commander" href="formulaire.jsp" >commander</a></button>
 </body>
 </html>

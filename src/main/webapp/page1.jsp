@@ -12,7 +12,7 @@
 <h1>les articles disponibles</h1>
 <div align="right">
 <img alt="" src="R.png" width="40" height="40"style="vertical-align: middle;" >
-		<a href="http://localhost:8081/e-commerce-v2/AfficherPanierServlet.jsp" >afficher panier</a>
+		<a id="affichierPanier" href="http://localhost:8081/e-commerce-v2/AfficherPanierServlet.jsp" >afficher panier</a>
 </div>
 <table border="2">
   <thead>
@@ -30,7 +30,7 @@
       <td>699.99</td>
       
       <td>
-         <a href="AjouterServlet?nom=Ordinateur Portable&descp=HP 15 pouces 8GB RAM&prix=699.99" >ajouter au panier</a>	
+         <a id="ajouter" href="AjouterServlet?nom=Ordinateur Portable&descp=HP 15 pouces 8GB RAM&prix=699.99" >ajouter au panier</a>	
 	
       </td>
     </tr>
@@ -39,7 +39,7 @@
       <td>Logitech M185</td>
       <td>12.99</td>
       <td>
-        <a href="AjouterServlet?nom=Souris Sans Fil&descp=Logitech M185&prix=12.99" >ajouter au panier</a>	
+        <a id="ajouter" href="AjouterServlet?nom=Souris Sans Fil&descp=Logitech M185&prix=12.99" >ajouter au panier</a>	
 
       </td>
     </tr>
@@ -48,6 +48,6 @@
 
 
 <br>
-<button><a href="page2.jsp" >suivant</a></button>
+<button id="btnSuivant"><a href="page2.jsp" >suivant</a></button>
 </body>
 </html>

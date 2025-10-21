@@ -15,11 +15,11 @@
 		<a href="http://localhost:8081/e-commerce-v2/AfficherPanierServlet.jsp" >afficher panier</a>
 </div>
 <form method="post" action="Commander">
-  NOM: <input type="text" name="nom" /><br>
-  PRENOM: <input type="text" name="prenom" /><br>
-  TELEPHONE: <input type="text" name="telephone" /><br>
-  ADRESSE: <input type="text" name="adresse" /> <br>
-    <button type="submit"   />enregistrer</button>
+  NOM: <input id="name" type="text" name="nom" /><br>
+  PRENOM: <input id="prenom" type="text" name="prenom" /><br>
+  TELEPHONE: <input id="tlf" type="text" name="telephone" /><br>
+  ADRESSE: <input id="adress" type="text" name="adresse" /> <br>
+    <button id="enregistrer" type="submit"   />enregistrer</button>
   
 </form>
 

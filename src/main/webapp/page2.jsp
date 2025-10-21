@@ -13,7 +13,7 @@
 
 <div align="right">
 <img alt="" src="R.png" width="40" height="40"style="vertical-align: middle;" >
-		<a href="http://localhost:8081/e-commerce-v2/AfficherPanierServlet.jsp" >afficher panier</a>
+		<a id="affichierPanier" href="http://localhost:8081/e-commerce-v2/AfficherPanierServlet.jsp" >afficher panier</a>
 </div>
 <table border="2">
   <thead>
@@ -30,7 +30,7 @@
       <td>switches cherry mx</td>
       <td>89.99</td>
       <td>
-         <a href="AjouterServlet?nom=clavier Mecanique&descp=switches cherry mx&prix=89.99" >ajouter au panier</a>	
+         <a id="ajouter" href="AjouterServlet?nom=clavier Mecanique&descp=switches cherry mx&prix=89.99" >ajouter au panier</a>	
 
       </td>
     </tr>
@@ -39,7 +39,7 @@
       <td>full hd, 144Hz</td>
       <td>199.99</td>
       <td>
-         <a href="AjouterServlet?nom=ecran 24&descp=full hd, 144Hz&prix=199.99" >ajouter au panier</a>	
+         <a id="ajouter" href="AjouterServlet?nom=ecran 24&descp=full hd, 144Hz&prix=199.99" >ajouter au panier</a>	
 
       </td>
     </tr>
@@ -49,6 +49,6 @@
 
 
 <br>
-<button><a href="page1.jsp">retour</a></button>
+<button id="btnRetour"><a href="page1.jsp">retour</a></button>
 </body>
 </html>
