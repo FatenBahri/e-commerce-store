@@ -4,7 +4,6 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 public class passationAdmin {
 
@@ -13,12 +12,7 @@ public class passationAdmin {
     // ----------------- Partie utilisateur -----------------
     @Given("l'utilisateur ouvre la page panier")
     public void pagePanier() {
-    	// Example Java/Selenium WebDriver setup modification
-    	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--headless");       // Run without a GUI
-    	options.addArguments("--no-sandbox");    // Required for Jenkins/Linux environments
-    	options.addArguments("--disable-dev-shm-usage"); // Helps prevent "Out of memory" errors
-    	WebDriver driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
         driver.get("http://localhost:8081/e-commerce-v2/AfficherPanierServlet.jsp");
         attendre(2000);
     }
@@ -66,12 +60,7 @@ public class passationAdmin {
     // ----------------- Partie Admin -----------------
     @Given("l'utilisateur est sur la page admin")
     public void pageAdmin() {
-    	// Example Java/Selenium WebDriver setup modification
-    	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--headless");       // Run without a GUI
-    	options.addArguments("--no-sandbox");    // Required for Jenkins/Linux environments
-    	options.addArguments("--disable-dev-shm-usage"); // Helps prevent "Out of memory" errors
-    	WebDriver driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
 
         driver.get("http://localhost:8081/e-commerce-v2/admin.jsp");
         attendre(2000);

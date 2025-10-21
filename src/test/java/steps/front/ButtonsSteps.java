@@ -4,19 +4,13 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 public class ButtonsSteps {
     WebDriver driver;
 
     @Given("l'utilisateur est sur la page 1")
     public void ouvrir_dashboard() {
-    	// Example Java/Selenium WebDriver setup modification
-    	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--headless");       // Run without a GUI
-    	options.addArguments("--no-sandbox");    // Required for Jenkins/Linux environments
-    	options.addArguments("--disable-dev-shm-usage"); // Helps prevent "Out of memory" errors
-    	WebDriver driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
         driver.get("http://localhost:8081/e-commerce-v2/page1.jsp");
         attendre(2000); // attendre 2s pour le chargement
     }
