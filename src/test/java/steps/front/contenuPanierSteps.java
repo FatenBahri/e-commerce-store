@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,7 +19,16 @@ public class contenuPanierSteps {
 
     @Given("l'utilisateur est sur la page 1 ou 2")
     public void ouvrir_dashboard() {
-        driver = new ChromeDriver();
+    	ChromeOptions options = new ChromeOptions();
+        
+        // 2. Add CRITICAL Headless/Sandbox Arguments
+        options.addArguments("--headless=new");          // Use the modern headless mode for efficiency
+        options.addArguments("--no-sandbox");            // **CRITICAL for Jenkins/Linux where user is not root**
+        options.addArguments("--disable-dev-shm-usage"); // Recommended to prevent container-related crashes (running on WSL2)
+        options.addArguments("--window-size=1920,1080"); // Define a fixed window size
+        
+        // 3. Initialize the Driver
+        this.driver = new ChromeDriver(options);
         driver.get("http://localhost:8081/e-commerce-v2/page1.jsp");
         attendre(2000); // attendre 2s pour le chargement
     }
