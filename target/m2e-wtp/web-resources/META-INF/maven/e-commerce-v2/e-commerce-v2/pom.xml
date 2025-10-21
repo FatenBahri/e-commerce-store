@@ -44,11 +44,7 @@
     </dependency>
 
 
-    <dependency>
-    	<groupId>com.example</groupId>
-    	<artifactId>testCucumber</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+   
   </dependencies>
   <build>
     <plugins>
