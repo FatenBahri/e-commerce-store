@@ -64,7 +64,7 @@
               <port>8081</port>
               <path>/e-commerce-v2</path>
               <fork>true</fork> 
-              <wait>15</wait>
+              <wait>20</wait>
               </configuration>
           <executions>
               <execution>
