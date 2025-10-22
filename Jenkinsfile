@@ -22,7 +22,9 @@ pipeline {
 		  stage('Build'){
             steps{
                 echo 'Building..cad le compilation de projet ET =>artifact .war/.jar'
-                sh 'mvn clean package -DskipTests'
+                //mvn package :exécute par défaut les tests JUnit/Cucumber. 
+				// Donc même si tu ne les lances pas dans ton stage Test, ils vont tourner pendant le package.
+                sh 'mvn clean package -DskipTests'//compile les tests mais ne les exécute pas.
             }
         }
     
