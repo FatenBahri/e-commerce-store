@@ -6,66 +6,57 @@
 <head>
 <meta charset="UTF-8">
 <title>COMMERCE</title>
-<link rel="stylesheet" type="text/css" href="design.css">
-
+<link rel="stylesheet" type="text/css" href="designp.css">
 </head>
 <body>
-    <h2>Votre Panier</h2>
+<h2>Votre Panier</h2>
+
 <div align="right">
-<img alt="" src="R.png" width="40" height="40"style="vertical-align: middle;" >
-		<a id="retourCat" href="http://localhost:8081/e-commerce-v2/page1.jsp" >retour au catalogue</a>
+    <img alt="" src="R.png" width="40" height="40" style="vertical-align: middle;">
+    <a id="retourCat" href="http://localhost:8081/e-commerce-v2/page1.jsp">retour au catalogue</a>
 </div>
-    <%
-        // Récupérer le panier depuis la session
-        Vector<Article> panier = (Vector<Article>) session.getAttribute("panier");
 
-        if (panier == null ) {
-    %>
-        <p>Le panier est vide.</p>
-    <%
-        } else {
-    %>
-        <!-- Déclarer le bean une seule fois -->
-        <jsp:useBean id="article" class="pack.Article" scope="page" />
+<%
+    Vector<Article> panier = (Vector<Article>) session.getAttribute("panier");
 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Description</th>
-                    <th>Prix</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% 
-                    // Parcourir les articles du panier
-                    for (Article articleItem : panier) {
-                %>
-                <!-- Mettre à jour les propriétés du bean -->
-                <jsp:setProperty name="article" property="nom" value="<%= articleItem.getNom() %>" />
-                <jsp:setProperty name="article" property="description" value="<%= articleItem.getDescription() %>" />
-                <jsp:setProperty name="article" property="prix" value="<%= articleItem.getPrix() %>" />
-                
-                <tr>
-                    <td><jsp:getProperty name="article" property="nom" /></td>
-                    <td><jsp:getProperty name="article" property="description" /></td>
-                    <td><jsp:getProperty name="article" property="prix" /> €</td>
-                    <td>
-                        <a class="supprimer" href="SupprimerServlet?nom=<jsp:getProperty name='article' property='nom' />&descp=<jsp:getProperty name='article' property='description' />&prix=<jsp:getProperty name='article' property='prix' />">
-                            Supprimer
-                        </a>
-                    </td>
-                </tr>
-                <%
-                    }
-                %>
-            </tbody>
-        </table>
-    <%
-        }
-    %>
- <br>
-<button><a id="commander" href="formulaire.jsp" >commander</a></button>
+    if (panier == null || panier.isEmpty()) {
+%>
+    <p>Le panier est vide.</p>
+<%
+    } else {
+%>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% 
+            for (Article articleItem : panier) {
+        %>
+            <tr>
+                <td data-label="Nom"><%= articleItem.getNom() %></td>
+                <td data-label="Description"><%= articleItem.getDescription() %></td>
+                <td data-label="Prix"><%= articleItem.getPrix() %> €</td>
+                <td data-label="Action">
+                    <a class="supprimer" href="SupprimerServlet?nom=<%= articleItem.getNom() %>&descp=<%= articleItem.getDescription() %>&prix=<%= articleItem.getPrix() %>">Supprimer</a>
+                </td>
+            </tr>
+        <% 
+            }
+        %>
+        </tbody>
+    </table>
+</div>
+<br>
+<button id="commander"><a  href="formulaire.jsp">Commander</a></button>
+<%
+    }
+%>
 </body>
 </html>

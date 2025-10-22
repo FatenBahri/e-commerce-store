@@ -1,0 +1,325 @@
+/* Reset des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fond de page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Titre de la page */
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Panier link container */
+div[align="right"] {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#affichierPanier {
+    text-decoration: none;
+    color: #fff;
+    background-color: #74ebd5;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#affichierPanier:hover {
+    background-color: #67d8ca;
+}
+#retourCat {
+    text-decoration: none;
+    color: #fff;
+    background-color: #74ebd5;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#retourCat:hover {
+    background-color: #67d8ca;
+}
+div[align="right"] img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Container table pour responsive */
+.table-container {
+    width: 80%;
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* En-tête */
+th {
+    background-color: #74ebd5;
+    color: #fff;
+    padding: 12px 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Corps de table */
+td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+/* Ligne hover */
+tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+/* Ajouter au panier links */
+#ajouter {
+    text-decoration: none;
+    color: #fff;
+    background-color: #74ebd5;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#ajouter:hover {
+    background-color: #67d8ca;
+}
+/* voir details */
+#voirDetails {
+    text-decoration: none;
+    color: #fff;
+    background-color: #74ebd5;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#voirDetails:hover {
+    background-color: #67d8ca;
+}
+/* supprimer au panier links */
+.supprimer {
+    text-decoration: none;
+    color: #fff;
+    background-color: #74ebd5;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.supprimer:hover {
+    background-color: #67d8ca;
+}
+
+/* Bouton retour */
+#btnRetour {
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: #74ebd5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btnRetour a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#btnRetour:hover {
+    background-color: #67d8ca;
+}
+/* Bouton archiver */
+#archiver {
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: #74ebd5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#archiver a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#archiver:hover {
+    background-color: #67d8ca;
+}
+/* Bouton Suivant */
+#btnSuivant {
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: #74ebd5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btnSuivant a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#btnSuivant:hover {
+    background-color: #67d8ca;
+}
+/* Bouton Commander */
+#commander {
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: #74ebd5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#commander a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#commander:hover {
+    background-color: #67d8ca;
+}
+/* Responsive table pour mobiles */
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead tr {
+        display: none;
+    }
+    tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #74ebd5;
+    }
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+/* Container du formulaire */
+.form-container {
+    width: 350px;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin: 30px auto;
+}
+
+/* Titres */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.client-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Inputs */
+.client-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.client-form input:focus {
+    border-color: #74ebd5;
+    box-shadow: 0 0 5px #74ebd5;
+}
+
+/* Bouton */
+#enregistrer {
+    width: 100%;
+    padding: 12px;
+    background-color: #74ebd5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#enregistrer:hover {
+    background-color: #67d8ca;
+}
+
+/* Lien panier */
+#affichierPanier {
+    text-decoration: none;
+    color: #fff;
+    background-color: #74ebd5;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#affichierPanier:hover {
+    background-color: #67d8ca;
+}
