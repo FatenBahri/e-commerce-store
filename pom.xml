@@ -64,7 +64,6 @@
               <port>8081</port>
               <path>/e-commerce-v2</path>
               <fork>true</fork> 
-              <wait>15</wait>
               </configuration>
           <executions>
               <execution>
@@ -84,7 +83,18 @@
           </executions>
       </plugin>
       
-      
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>3.2.5</version> <executions>
+              <execution>
+                  <goals>
+                      <goal>integration-test</goal>
+                      <goal>verify</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
 
       <plugin>
           <groupId>org.apache.maven.plugins</groupId>
