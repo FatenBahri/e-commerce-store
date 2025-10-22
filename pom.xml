@@ -63,7 +63,9 @@
           <configuration>
               <port>8081</port>
               <path>/e-commerce-v2</path>
-              <fork>true</fork> </configuration>
+              <fork>true</fork> 
+              <wait>15</wait>
+              </configuration>
           <executions>
               <execution>
                   <id>start-tomcat</id>
