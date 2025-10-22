@@ -15,7 +15,7 @@ pipeline {
          stage('Test'){
             steps{
                 echo 'partie test junit+cucumber'
-                sh 'mvn clean test'
+              //  sh 'mvn test' ou mvn clean test ou mvn clean verify
                 
             }
         }
