@@ -26,7 +26,7 @@ public class contenuPanierSteps {
         options.addArguments("--no-sandbox");            // **CRITICAL for Jenkins/Linux where user is not root**
         options.addArguments("--disable-dev-shm-usage"); // Recommended to prevent container-related crashes (running on WSL2)
         options.addArguments("--window-size=1920,1080"); // Define a fixed window size
-        
+        options.addArguments("--user-data-dir=/tmp/chrome_user_data_" + System.currentTimeMillis());
         // 3. Initialize the Driver
         this.driver = new ChromeDriver(options);
         driver.get("http://localhost:8081/e-commerce-v2/page1.jsp");
