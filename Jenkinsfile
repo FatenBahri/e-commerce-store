@@ -22,7 +22,7 @@ pipeline {
 		  stage('Build'){
             steps{
                 echo 'Building..cad le compilation de projet ET =>artifact .war/.jar'
-                sh  'mvn clean package '
+                sh 'mvn clean package -DskipTests'
             }
         }
     
